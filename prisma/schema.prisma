@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model product {
+  id             Int      @id @default(autoincrement()) // Primary key
+  index          Int?
+  url            String?  @db.Text
+  name           String?  @db.Text
+  sku            String?  @db.Text
+  selling_price  Int?
+  original_price String?  @db.Text
+  currency       String?  @db.Text
+  availability   String?  @db.Text
+  color          String?  @db.Text
+  category       String?  @db.Text
+  source         String?  @db.Text
+  source_website String?  @db.Text
+  breadcrumbs    String?  @db.Text
+  description    String?  @db.Text
+  brand          String?  @db.Text
+  images         String?  @db.Text
+  country        String?  @db.Text
+  language       String?  @db.Text
+  average_rating Float?   @db.Float
+  reviews_count  Int?
+  crawled_at     String?  @db.Text
+}
